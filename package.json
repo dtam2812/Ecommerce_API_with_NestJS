@@ -1,7 +1,7 @@
 {
-  "name": "intern_graduate_project",
+  "name": "ecommerce-api-with-nestjs",
   "version": "0.0.1",
-  "description": "",
+  "description": "Ecommerce API with NestJS",
   "author": "",
   "private": true,
   "license": "UNLICENSED",

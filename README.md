@@ -1,6 +1,6 @@
-# E-Commerce RESTful API Backend
+# Ecommerce API with NestJS
 
-A production-ready e-commerce backend RESTful API built for an internship graduation project at DEKON. Developed with **NestJS**, running on a **MongoDB Replica Set** to support multi-document ACID transactions, featuring dual-layer authentication (JWT Token Rotation + Google OAuth2), role-based access control (RBAC), and automated event-driven email notifications.
+A production-ready e-commerce backend RESTful API built with **NestJS**, running on a **MongoDB Replica Set** to support multi-document ACID transactions, featuring dual-layer authentication (JWT Token Rotation + Google OAuth2), role-based access control (RBAC), and automated event-driven email notifications.
 
 ---
 
@@ -8,8 +8,8 @@ A production-ready e-commerce backend RESTful API built for an internship gradua
 
 A live deployment of this project is hosted on Render and MongoDB Atlas:
 
-- **Swagger UI Documentation**: [https://dekon-intern-graduate-project.onrender.com/api/docs](https://dekon-intern-graduate-project.onrender.com/api/docs)
-- **Health Check Endpoint**: [https://dekon-intern-graduate-project.onrender.com/health](https://dekon-intern-graduate-project.onrender.com/health)
+- **Swagger UI Documentation**: [https://ecommerce-api-with-nestjs.onrender.com/api/docs](https://ecommerce-api-with-nestjs.onrender.com/api/docs)
+- **Health Check Endpoint**: [https://ecommerce-api-with-nestjs.onrender.com/health](https://ecommerce-api-with-nestjs.onrender.com/health)
   - **Expected Response**: `{ "data": { "status": "ok" } }` (HTTP 200 OK)
 - **Pre-configured Accounts**: Test all features directly using the [Demo Accounts](#-demo-accounts-for-reviewer) listed below.
 
@@ -20,7 +20,7 @@ A live deployment of this project is hosted on Render and MongoDB Atlas:
 
 ### Health Check Verification Commands:
 
-- **Browser**: Navigate directly to `https://dekon-intern-graduate-project.onrender.com/health`
+- **Browser**: Navigate directly to `https://ecommerce-api-with-nestjs.onrender.com/health`
 
 > [!WARNING]
 > **Shared Production Data Notice**:
@@ -60,7 +60,7 @@ A live deployment of this project is hosted on Render and MongoDB Atlas:
 | Dimension                        | Local (Docker Compose)                                          | Live Deployment (Render + Atlas)                  |
 | -------------------------------- | --------------------------------------------------------------- | ------------------------------------------------- |
 | **Host Environment**             | Local Docker engine on your machine                             | Render Web Service                                |
-| **Database Engine**              | Containerized MongoDB 7.0 (`dekon-mongodb`)                     | Shared MongoDB Atlas Cloud Cluster                |
+| **Database Engine**              | Containerized MongoDB 7.0 (`ecommerce-mongodb`)                 | Shared MongoDB Atlas Cloud Cluster                |
 | **Data Isolation**               | **Completely Isolated**: private to your local machine          | **Shared**: shared among all reviewers            |
 | **Resetting Data**               | Run `docker compose down -v` to reset cleanly to seed dump      | Manual database restore (restricted)              |
 | **Mongo Express GUI**            | **Available** at `http://localhost:8081`                        | **Disabled** (Not exposed for security)           |
@@ -168,7 +168,7 @@ You need to create a custom `.env` file when you want to enable **real Google OA
    - Application type: Select **Web application**.
 4. Under **Authorized redirect URIs**, add both:
    - Local: `http://localhost:3000/auth/google/callback`
-   - Live Demo: `https://dekon-intern-graduate-project.onrender.com/auth/google/callback`
+   - Live Demo: `https://ecommerce-api-with-nestjs.onrender.com/auth/google/callback`
      _(Must match `GOOGLE_CALLBACK_URL` character-for-character with no trailing slash)._
 5. **Authorized JavaScript origins**: Leave blank (this API handles authentication via server-side redirection).
 6. Click **Create**, then copy the generated **Client ID** and **Client Secret** into your `.env`:
@@ -190,7 +190,7 @@ You need to create a custom `.env` file when you want to enable **real Google OA
 
 1. Enable **2-Step Verification** on your Google Account at [Google Account Security](https://myaccount.google.com/security).
 2. Go to [Google App Passwords](https://myaccount.google.com/apppasswords):
-   - Enter an App name (e.g., `Dekon E-Commerce API`).
+   - Enter an App name (e.g., `Ecommerce API with NestJS`).
    - Click **Create**, then copy the generated 16-character password (remove all spaces).
 3. Populate the variables in `.env`:
    ```env
@@ -275,19 +275,19 @@ This method runs the full application stack locally using Docker. It automatical
 This is the **recommended** and fastest method to review and test the project, requiring zero local installation or configuration:
 
 1. **Open Live Swagger UI**:
-   Navigate directly to **[https://dekon-intern-graduate-project.onrender.com/api/docs](https://dekon-intern-graduate-project.onrender.com/api/docs)**.
+   Navigate directly to **[https://ecommerce-api-with-nestjs.onrender.com/api/docs](https://ecommerce-api-with-nestjs.onrender.com/api/docs)**.
 
 2. **Instant Testing**:
    - The cloud service is fully pre-configured with MongoDB Atlas, OAuth, and mailer services.
    - Use the pre-loaded [Demo Accounts](#-demo-accounts-for-reviewer) (`Admin`, `Staff`, `Customer`) to authenticate and test all endpoints immediately.
-   - If the service is asleep, call the [Health Check](https://dekon-intern-graduate-project.onrender.com/health) endpoint once to wake it up.
+   - If the service is asleep, call the [Health Check](https://ecommerce-api-with-nestjs.onrender.com/health) endpoint once to wake it up.
 
 ---
 
 ## 📖 API Documentation (Swagger UI)
 
 With the application running, visit the interactive OpenAPI documentation:
-👉 **`http://localhost:3000/api/docs`** (Local) or **[Render Live Swagger](https://dekon-intern-graduate-project.onrender.com/api/docs)**
+👉 **`http://localhost:3000/api/docs`** (Local) or **[Render Live Swagger](https://ecommerce-api-with-nestjs.onrender.com/api/docs)**
 
 ### Testing Protected Endpoints on Swagger UI:
 

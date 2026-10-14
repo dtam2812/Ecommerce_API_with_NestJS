@@ -56,9 +56,9 @@ async function bootstrap() {
   app.useLogger(app.get(Logger));
 
   const config = new DocumentBuilder()
-    .setTitle('E-commerce API')
+    .setTitle('Ecommerce API with NestJS')
     .setDescription(
-      `Backend API for a sales website (internship project at DEKON).
+      `Backend API for a sales website built with NestJS.
 
 ###  Demo Accounts for Reviewer:
 * **Admin** (Full permissions: Products, Categories, Users):
